@@ -1,5 +1,7 @@
 local opt = vim.opt
 
+vim.g.mapleader = " "
+
 -- Toggle cmd height when writing a command
 vim.g.CMDHEIGHT = 0
 
