@@ -1,6 +1,7 @@
 return {
 	--=========== BASICS ===========--
 	"nvim-lua/plenary.nvim",
+	"nvim-tree/nvim-tree.lua",
 
 	--=========== SCHEMES ===========--
 	"catppuccin/nvim",
