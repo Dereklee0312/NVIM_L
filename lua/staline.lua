@@ -7,16 +7,16 @@ function M.config()
 	require("staline").setup({
 		mode_colors = {
 			i = "#d4be98",
-			n = "#2ac3de",
+			n = "#06d6a0",
 			c = "#8fbf7f",
-			v = "#E34234",
+			v = "#86bbd8",
 		},
 		defaults = {
 			fg = "#000000",
 			true_colors = true,
 			left_separator = "",
 			right_separator = "",
-			line_column = " [%l/%L] :%c  ",
+			line_column = "%l/%L | %c",
 			branch_symbol = " ",
 		},
 		sections = {
@@ -47,7 +47,7 @@ function M.config()
 				end,
 			},
 			mid = { "lsp" },
-			right = { "right_sep_double", "-line_column", "left_sep_double"},
+			right = { "right_sep_double", "-lsp_name", "left_sep_double", "right_sep", "-line_column", "left_sep"},
 		},
 	})
 	require("stabline").setup({
