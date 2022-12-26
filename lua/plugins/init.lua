@@ -7,4 +7,6 @@ return {
 	"tamton-aquib/staline.nvim",
 	"nvim-treesitter/nvim-treesitter",
 	"nvim-telescope/telescope.nvim",
+	--=========== GITSIGNS ===========--
+	'lewis6991/gitsigns.nvim',
 }
