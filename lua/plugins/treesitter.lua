@@ -13,7 +13,8 @@ function M.config()
 		sync_install = true,
 		auto_install = false,
 		highlight = {
-			enable = true
+			enable = true,
+			use_languagetree = true
 		},
 	})
 end

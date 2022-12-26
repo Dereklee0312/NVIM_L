@@ -14,7 +14,8 @@ end
 
 M.setup = function()
 	-- lazyload tabufline
-	vim.opt.statusline = "%{%v:lua.require('ui').statusline()%}"
+	-- vim.opt.statusline = "%{%v:lua.require('ui').statusline()%}"
+	vim.opt.statusline = "%!v:lua.require('ui').statusline()"
 end
 
 return M

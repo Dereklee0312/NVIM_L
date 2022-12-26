@@ -1,7 +1,5 @@
 local opt = vim.opt
 
-vim.g.mapleader = " "
-
 -- Toggle cmd height when writing a command
 vim.g.CMDHEIGHT = 0
 
@@ -9,7 +7,6 @@ opt.cmdheight = 0
 
 -- File stuff
 opt.undofile = false
-vim.cmd "noswapfile"
 
 -- Searching stuff
 opt.iskeyword:append "-" -- consider string-string as whole word
@@ -33,3 +30,4 @@ opt.scrolloff = 10
 opt.sidescrolloff = 20
 opt.clipboard = ""
 opt.termguicolors = true
+opt.signcolumn = 'yes'

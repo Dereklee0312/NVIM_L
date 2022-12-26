@@ -1,6 +1,8 @@
 local core_modules = {
 	"core/opts",
 	"core/autocmd",
+	"core/mappings",
+	"core/lsp_maps"
 }
 
 -- Using pcall we can handle better any loading issues
