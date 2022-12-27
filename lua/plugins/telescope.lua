@@ -2,7 +2,7 @@ local M = {
 	"nvim-telescope/telescope.nvim",
 	cmd = { "Telescope" },
 	dependencies = {
-		{ "nvim-telescope/telescope-file-browser.nvim" },
+		{ "nvim-telescope/telescope-file-browser.nvim", "nvim-lua/plenary.nvim" },
 	},
 }
 
@@ -81,7 +81,7 @@ function M.config()
 	}
 
 	telescope.setup(options)
-    telescope.load_extension("file_browser")
+	telescope.load_extension("file_browser")
 end
 
 function M.init()

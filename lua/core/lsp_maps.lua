@@ -21,7 +21,7 @@ end, opts)
 map("n", "<A-e>", "<CMD> Telescope diagnostics <CR>", opts)
 
 map("n", "<leader>fm", function()
-	vim.lsp.buf.format { async = true }
+	vim.lsp.buf.format({ async = true })
 end, opts)
 
 map("n", "<leader>ra", function()
@@ -44,7 +44,7 @@ map("n", "go", function()
 	vim.lsp.buf.implementation()
 end, opts)
 
-map("n", "<C-k>", function()
+map("n", "<leader>lh", function()
 	vim.lsp.buf.signature_help()
 end, opts)
 

@@ -1,6 +1,6 @@
 local M = {
 	"nvim-treesitter/nvim-treesitter",
-	event = "VimEnter"
+	event = "VeryLazy"
 }
 
 function M.config()

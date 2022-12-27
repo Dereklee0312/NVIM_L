@@ -1,9 +1,8 @@
 return {
 	--=========== BASICS ===========--
-	"nvim-lua/plenary.nvim",
 	{
 		"numToStr/Comment.nvim",
-		event = "VimEnter",
+		event = "VeryLazy",
 		config = function()
 			require("Comment").setup()
 		end,
@@ -19,7 +18,10 @@ return {
 	},
 
 	--=========== BUFFER GOODIES ===========-
-	"tamton-aquib/staline.nvim",
+	{
+		"dstein64/vim-startuptime",
+		cmd = { "StartupTime" },
+	},
 	-- {
 	-- 	"NvChad/ui",
 	-- 	lazy = false,
@@ -32,6 +34,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		lazy = false,
+		-- event = "VeryLazy",
 		config = function()
 			require("plugins.lsp.lspconfig")
 			require("plugins.lsp.attach")
@@ -41,6 +44,8 @@ return {
 	{
 		"williamboman/mason.nvim",
 		lazy = false,
+		-- event = "VeryLazy",
+		-- dependencies = { "neovim/nvim-lspconfig" },
 		config = function()
 			require("plugins.lsp.mason")
 		end,
@@ -70,7 +75,7 @@ return {
 	-- Formatting
 	{
 		"jose-elias-alvarez/null-ls.nvim",
-		event = "VimEnter",
+		event = "VeryLazy",
 		config = function()
 			require("plugins.lsp.null")
 		end,

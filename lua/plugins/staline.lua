@@ -1,6 +1,7 @@
 local M = {
 	"tamton-aquib/staline.nvim",
-	lazy = false,
+	enabled = false,
+	-- lazy = false,
 }
 
 function M.config()
