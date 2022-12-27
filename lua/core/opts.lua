@@ -21,6 +21,7 @@ opt.tabstop = 4
 opt.softtabstop = 4
 
 -- Line numbers
+opt.number = true
 opt.relativenumber = true
 opt.numberwidth = 2
 
