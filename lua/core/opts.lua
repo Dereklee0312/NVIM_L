@@ -22,6 +22,7 @@ opt.softtabstop = 4
 
 -- Line numbers
 opt.relativenumber = true
+opt.numberwidth = 2
 
 -- Buffer stuff
 opt.wrap = false -- No wrap lines
