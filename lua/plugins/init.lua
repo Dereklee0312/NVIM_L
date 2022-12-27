@@ -34,18 +34,13 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		lazy = false,
-		-- event = "VeryLazy",
 		config = function()
 			require("plugins.lsp.lspconfig")
-			require("plugins.lsp.attach")
-			require("plugins.lsp.diagnostics")
 		end,
 	},
 	{
 		"williamboman/mason.nvim",
 		lazy = false,
-		-- event = "VeryLazy",
-		-- dependencies = { "neovim/nvim-lspconfig" },
 		config = function()
 			require("plugins.lsp.mason")
 		end,
