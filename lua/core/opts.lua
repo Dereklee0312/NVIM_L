@@ -32,3 +32,4 @@ opt.sidescrolloff = 20
 opt.clipboard = ""
 opt.termguicolors = true
 opt.signcolumn = 'yes'
+opt.laststatus = 3
