@@ -69,6 +69,17 @@ local function git_delete()
 	return removed
 end
 
+local function lsp_clients()
+	local clients = {}
+	for _, client in pairs(vim.lsp.get_active_clients()) do
+		if client.attached_buffers[vim.api.nvim_get_current_buf()] then
+			clients[#clients + 1] = client.name
+		end
+	end
+	local name = table.concat(clients, ",")
+	return (vim.o.columns > 90) and name .. " " or "  LSP "
+end
+
 local M = {
 	"nvim-lualine/lualine.nvim",
 	event = "VeryLazy",
@@ -92,26 +103,28 @@ function M.config()
 		sections = {
 			lualine_a = { { mode, separator = { left = "", right = "" } } },
 			lualine_b = { "branch" },
+			-- lualine_c = {
+			-- 	{ "diagnostics", sources = { "nvim_diagnostic" } },
+			-- 	{ "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+			-- 	{ "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
+			-- 	{
+			-- 		function()
+			-- 			local navic = require("nvim-navic")
+			-- 			local ret = navic.get_location()
+			-- 			return ret:len() > 2000 and "navic error" or ret
+			-- 		end,
+			-- 		cond = function()
+			-- 			if package.loaded["nvim-navic"] then
+			-- 				local navic = require("nvim-navic")
+			-- 				return navic.is_available()
+			-- 			end
+			-- 		end,
+			-- 		color = { fg = "#ff9e64" },
+			-- 	},
+			-- },
 			lualine_c = {
-				{ "diagnostics", sources = { "nvim_diagnostic" } },
 				{ "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-				{ "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
-				{
-					function()
-						local navic = require("nvim-navic")
-						local ret = navic.get_location()
-						return ret:len() > 2000 and "navic error" or ret
-					end,
-					cond = function()
-						if package.loaded["nvim-navic"] then
-							local navic = require("nvim-navic")
-							return navic.is_available()
-						end
-					end,
-					color = { fg = "#ff9e64" },
-				},
-			},
-			lualine_x = {
+				{ "filename", path = 1, symbols = { modified = "", readonly = "", unnamed = "" } },
 				{ git_branch, color = { fg = "#9792e3" }, separator = "", padding = { left = 0, right = 0 } },
 				{
 					git_add,
@@ -143,7 +156,7 @@ function M.config()
 					git_delete,
 					color = { fg = "#d9594c" },
 					separator = "",
-					padding = { left = 0, right = 1 },
+					padding = { left = 0, right = 0 },
 					cond = function()
 						if not vim.b.gitsigns_head or vim.b.gitsigns_git_status then
 							return false
@@ -152,6 +165,50 @@ function M.config()
 						end
 					end,
 				},
+			},
+			lualine_x = {
+				{ "diagnostics", sources = { "nvim_diagnostic" } },
+				{ lsp_clients, color = { fg = "#e6e8e6" } },
+				-- { git_branch, color = { fg = "#9792e3" }, separator = "", padding = { left = 0, right = 1 } },
+				-- {
+				-- 	git_add,
+				-- 	color = { fg = "#61e786" },
+				-- 	separator = "",
+				-- 	padding = { left = 1, right = 0 },
+				-- 	cond = function()
+				-- 		if not vim.b.gitsigns_head or vim.b.gitsigns_git_status then
+				-- 			return false
+				-- 		else
+				-- 			return true
+				-- 		end
+				-- 	end,
+				-- },
+				-- {
+				-- 	git_change,
+				-- 	color = { fg = "#ffd972" },
+				-- 	separator = "",
+				-- 	padding = { left = 0, right = 0 },
+				-- 	cond = function()
+				-- 		if not vim.b.gitsigns_head or vim.b.gitsigns_git_status then
+				-- 			return false
+				-- 		else
+				-- 			return true
+				-- 		end
+				-- 	end,
+				-- },
+				-- {
+				-- 	git_delete,
+				-- 	color = { fg = "#d9594c" },
+				-- 	separator = "",
+				-- 	padding = { left = 0, right = 0 },
+				-- 	cond = function()
+				-- 		if not vim.b.gitsigns_head or vim.b.gitsigns_git_status then
+				-- 			return false
+				-- 		else
+				-- 			return true
+				-- 		end
+				-- 	end,
+				-- },
 
 				-- {
 				--   require("noice").api.status.message.get_hl,
@@ -206,9 +263,8 @@ function M.config()
 				-- 	end,
 				-- },
 			},
-			lualine_y = { "location" },
+			lualine_y = { { "location", separator = { left = "" } } },
 			lualine_z = { { "progress", separator = { right = "" } } },
-			-- lualine_z = { { clock, separator = { right = "" } } },
 		},
 		inactive_sections = {
 			lualine_a = {},
