@@ -10,8 +10,6 @@ return {
 	},
 
 	--=========== SCHEMES ===========--
-	"catppuccin/nvim",
-	"folke/tokyonight.nvim",
 	{
 		"nvim-tree/nvim-web-devicons",
 		lazy = true,
@@ -21,19 +19,14 @@ return {
 	},
 
 	--=========== BUFFER GOODIES ===========-
-	"nvim-tree/nvim-tree.lua",
-	"nvim-treesitter/nvim-treesitter",
-	"nvim-telescope/telescope.nvim",
-	{
-		"NvChad/ui",
-		lazy = false,
-		config = function()
-			require("ui").setup()
-		end,
-	},
-
-	--=========== GITSIGNS ===========--
-	"lewis6991/gitsigns.nvim",
+	"tamton-aquib/staline.nvim",
+	-- {
+	-- 	"NvChad/ui",
+	-- 	lazy = false,
+	-- 	config = function()
+	-- 		require("ui").setup()
+	-- 	end,
+	-- },
 
 	--============== LSP ==============--
 	{
