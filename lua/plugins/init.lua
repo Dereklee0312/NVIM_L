@@ -1,7 +1,13 @@
 return {
 	--=========== BASICS ===========--
 	"nvim-lua/plenary.nvim",
-	"nvim-tree/nvim-tree.lua",
+	{
+		"numToStr/Comment.nvim",
+		event = "VimEnter",
+		config = function()
+			require("Comment").setup()
+		end,
+	},
 
 	--=========== SCHEMES ===========--
 	"catppuccin/nvim",
@@ -9,12 +15,13 @@ return {
 	{
 		"nvim-tree/nvim-web-devicons",
 		lazy = true,
-		config = function ()
+		config = function()
 			require("nvim-web-devicons").setup()
-		end
+		end,
 	},
 
 	--=========== BUFFER GOODIES ===========-
+	"nvim-tree/nvim-tree.lua",
 	"nvim-treesitter/nvim-treesitter",
 	"nvim-telescope/telescope.nvim",
 	{
@@ -22,29 +29,57 @@ return {
 		lazy = false,
 		config = function()
 			require("ui").setup()
-		end
+		end,
 	},
 
 	--=========== GITSIGNS ===========--
-	'lewis6991/gitsigns.nvim',
+	"lewis6991/gitsigns.nvim",
 
 	--============== LSP ==============--
-	'VonHeikemen/lsp-zero.nvim',
+	{
+		"neovim/nvim-lspconfig",
+		lazy = false,
+		config = function()
+			require("plugins.lsp.lspconfig")
+			require("plugins.lsp.attach")
+			require("plugins.lsp.diagnostics")
+		end,
+	},
+	{
+		"williamboman/mason.nvim",
+		lazy = false,
+		config = function()
+			require("plugins.lsp.mason")
+		end,
+	},
 
-    -- LSP Support
-    'neovim/nvim-lspconfig',
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
+	-- Autocompletion
+	{
+		"hrsh7th/nvim-cmp",
+		event = "InsertEnter",
+		dependencies = {
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"saadparwaiz1/cmp_luasnip",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-nvim-lua",
+			"hrsh7th/cmp-cmdline",
+		},
+		config = function()
+			require("plugins.lsp.cmp")
+		end,
+	},
 
-    -- Autocompletion
-    'hrsh7th/nvim-cmp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
-    'saadparwaiz1/cmp_luasnip',
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-nvim-lua',
+	-- Snippets
+	"L3MON4D3/LuaSnip",
+	"rafamadriz/friendly-snippets",
 
-    -- Snippets
-    'L3MON4D3/LuaSnip',
-    'rafamadriz/friendly-snippets',
+	-- Formatting
+	{
+		"jose-elias-alvarez/null-ls.nvim",
+		event = "VimEnter",
+		config = function()
+			require("plugins.lsp.null")
+		end,
+	},
 }
