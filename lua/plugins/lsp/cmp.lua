@@ -15,6 +15,11 @@ local check_backspace = function()
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
+local border_config = {
+	border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+	scrollbar = "┃",
+}
+
 --   פּ ﯟ   some other gogin for getting the float window for hovers etcod icons
 local kind_icons = {
 	Text = "",
@@ -59,8 +64,8 @@ cmp.setup({
 		["<C-n>"] = cmp.mapping.select_next_item(),
 		["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
-		["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+		["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
+		["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
 		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
 		["<C-y>"] = cmp.config.disable,
 		["<C-e>"] = cmp.mapping({
@@ -119,8 +124,8 @@ cmp.setup({
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
-		{ name = "luasnip" },
 		{ name = "buffer" },
+		{ name = "luasnip" },
 		{ name = "path" },
 	},
 	confirm_opts = {
@@ -128,11 +133,13 @@ cmp.setup({
 		select = false,
 	},
 	window = {
-		documentation = {
-			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-		},
+		documentation = border_config,
+		completion = border_config,
 	},
 	experimental = {
 		ghost_text = true,
+	},
+	completion = {
+		completeopt = "menu,menuone,noinsert",
 	},
 })
