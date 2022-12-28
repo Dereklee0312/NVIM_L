@@ -1,6 +1,6 @@
 local M = {
 	"folke/tokyonight.nvim",
-	lazy = true,
+	lazy = false,
 }
 
 function M.config()
@@ -94,11 +94,15 @@ function M.config()
 			--=================--
 			hl.WinSeparator = { fg = c.white }
 			hl.BufferInactive = { bg = NONE }
+			hl.TabLineFill = { bg = NONE }
 
 			--=================--
 			--====== CMP ======--
 			--=================--
 			hl.Pmenu = { bg = NONE }
+			-- hl.CmpBorder = { fg = "#5D3FD3" }
+			-- hl.CmpDocBorder = { fg = "#7F00FF" }
+
 		end,
 	})
 	vim.cmd("colorscheme tokyonight")
