@@ -50,6 +50,9 @@ map("n", "x", '"_x', opts)
 map("n", "D", '"_d', opts)
 map("n", "DD", '"_dd', opts)
 
+-- buffers
+map("n", "<leader>x", "<CMD>bdelete<CR>", opts)
+
 -----------------
 --  NVIM_TREE --
 -----------------

@@ -1,5 +1,6 @@
 local M = {
 	"akinsho/nvim-bufferline.lua",
+	enabled = false,
 	event = "BufAdd",
 }
 
@@ -135,7 +136,7 @@ end
 function M.init()
 	vim.keymap.set("n", "<S-Tab>", "<cmd>:BufferLineCyclePrev<CR>", { desc = "Previous Buffer" })
 	vim.keymap.set("n", "<Tab>", "<cmd>:BufferLineCycleNext<CR>", { desc = "Next Buffer" })
-	vim.keymap.set("n", "<leader>x", "<cmd>:BufferLinePickClose<CR>", { desc = "Next Buffer" })
+	vim.keymap.set("n", "<leader>x", "<cmd>:bdelete<CR>", { desc = "Next Buffer" })
 end
 
 return M
