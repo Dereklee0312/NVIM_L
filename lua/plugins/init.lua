@@ -7,7 +7,13 @@ return {
 			require("Comment").setup()
 		end,
 	},
-
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
+	},
 	--=========== SCHEMES ===========--
 	{
 		"nvim-tree/nvim-web-devicons",
