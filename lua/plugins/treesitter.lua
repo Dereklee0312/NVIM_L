@@ -1,7 +1,7 @@
 local M = {
 	"nvim-treesitter/nvim-treesitter",
 	event = "VeryLazy",
-	dependencies = { "p00f/nvim-ts-rainbow" },
+	dependencies = { "p00f/nvim-ts-rainbow", "nvim-treesitter/nvim-treesitter-refactor" },
 }
 
 function M.config()
@@ -30,6 +30,21 @@ function M.config()
 			enable = true,
 			extended_mode = true,
 			max_file_lines = nil,
+		},
+		refactor = {
+			smart_rename = {
+				enable = true,
+				keymaps = {
+					smart_rename = "<leader>ra",
+				},
+			},
+			navigation = {
+				enable = true,
+				keymaps = {
+					goto_next_usage = "gnn",
+					goto_previous_usage = "gnp",
+				},
+			},
 		},
 	})
 end
