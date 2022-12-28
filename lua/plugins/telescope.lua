@@ -81,6 +81,12 @@ function M.config()
 					i = { ["<esc>"] = actions.close },
 				},
 			},
+			-- file_browser = {
+			-- 	initial_mode = "insert",
+			-- 	mappings = {
+			-- 		i = { ["<CR>"] = actions.select_default},
+			-- 	},
+			-- },
 		},
 		extensions = {
 			["ui-select"] = {
@@ -103,9 +109,9 @@ function M.config()
 		},
 	}
 
-	telescope.setup(options)
 	telescope.load_extension("file_browser")
 	telescope.load_extension("ui-select")
+	telescope.setup(options)
 end
 
 function M.init()
