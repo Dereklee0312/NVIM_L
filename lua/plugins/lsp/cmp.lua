@@ -138,7 +138,7 @@ cmp.setup({
 		completion = border_config,
 	},
 	experimental = {
-		ghost_text = false,
+		ghost_text = true,
 	},
 	completion = {
 		completeopt = "menu,menuone,noinsert",
