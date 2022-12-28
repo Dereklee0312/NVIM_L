@@ -59,6 +59,12 @@ map("n", "<leader>x", "<CMD>bdelete<CR>", opts)
 map("n", "<C-n>", "<CMD> NvimTreeToggle <CR>", opts)
 
 ------------------
+---- GITSIGNS ----
+------------------
+map("n", "<leader>gd", "<CMD> Gitsigns toggle_deleted <CR>", opts)
+map("n", "<leader>gb", "<CMD> Gitsigns blame_line <CR>", opts)
+
+------------------
 --- TELESCOPE ---
 ------------------
 map("n", "<A-b>", "<CMD> Telescope buffers <CR>", opts)
@@ -66,3 +72,4 @@ map("n", "gr", "<cmd> Telescope lsp_references <CR>", opts, term_opts)
 map("n", "gi", "<cmd> Telescope lsp_implementations <CR>", opts, term_opts)
 map("n", "gd", "<cmd> Telescope lsp_definitions <CR>", opts, term_opts)
 map("n", "<leader>D", "<cmd> Telescope lsp_type_definitions <CR>", opts, term_opts)
+map("n", "<leader>tk", "<cmd> Telescope keymaps <CR>", opts, term_opts)
