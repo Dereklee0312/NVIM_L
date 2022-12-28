@@ -55,8 +55,8 @@ local opts = {}
 
 for _, server in pairs(servers) do
 	opts = {
-		on_attach = require("plugins.lsp.attach").on_attach,
-		capabilities = require("plugins.lsp.attach").capabilities,
+		on_attach = on_attach,
+		capabilities = capabilities,
 	}
 
 	-- server = vim.split(server, "@")[1]
