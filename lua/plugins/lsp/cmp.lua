@@ -122,10 +122,10 @@ cmp.setup({
 		end,
 	},
 	sources = {
-		{ name = "nvim_lsp" },
-		{ name = "nvim_lua" },
-		{ name = "buffer" },
 		{ name = "luasnip" },
+		{ name = "nvim_lsp" },
+		{ name = "buffer" },
+		{ name = "nvim_lua" },
 		{ name = "path" },
 	},
 	confirm_opts = {
@@ -137,7 +137,7 @@ cmp.setup({
 		completion = border_config,
 	},
 	experimental = {
-		ghost_text = true,
+		ghost_text = false,
 	},
 	completion = {
 		completeopt = "menu,menuone,noinsert",
