@@ -5,7 +5,7 @@ local M = {
 
 function M.config()
 	local mocha_flavour = {
-		flavour = "mocha", -- Can be one of: latte, frappe, macchiato, mocha
+		flavour = "macchiato", -- Can be one of: latte, frappe, macchiato, mocha
 		background = { light = "latte", dark = "mocha" },
 		dim_inactive = {
 			enabled = false,

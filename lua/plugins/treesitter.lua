@@ -7,9 +7,18 @@ local M = {
 function M.config()
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = {
+			"vim",
+			"html",
+			"css",
+			"javascript",
+			"json",
+			"markdown",
+			"c",
 			"bash",
-			"python",
 			"lua",
+			"python",
+			"java",
+			"c_sharp",
 		},
 		sync_install = true,
 		auto_install = false,
