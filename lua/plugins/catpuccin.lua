@@ -1,6 +1,6 @@
 local M = {
 	"catppuccin/nvim",
-	lazy = false,
+	lazy = true,
 }
 
 function M.config()
