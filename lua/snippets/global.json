@@ -1,0 +1,37 @@
+{
+  "AuthorDeets": {
+    "prefix": "author",
+    "body": [
+      "Name: Derek Lee",
+      "Student ID: 20820343",
+      "Module: ${0:Module}",
+      "Start Date: ${CURRENT_DATE}-${CURRENT_MONTH}-${CURRENT_YEAR}",
+      "End Date: ",
+      "\n"
+    ],
+    "description": "File header"
+  },
+  "LeetDeets": {
+    "prefix": "leet",
+    "body": [
+      "Author: Derek Lee",
+      "Start Date: ${CURRENT_DATE}-${CURRENT_MONTH}-${CURRENT_YEAR}",
+      "End Date: ",
+      "Link: ${0:Link}",
+      "\n"
+    ]
+  },
+  "AOCHeader": {
+    "prefix": "Ahead",
+    "body": [
+      "---",
+      "Title: Day ${1:Day} of Advent of Code",
+      "Date: ${CURRENT_DATE}-${CURRENT_MONTH}-${CURRENT_YEAR}",
+      "Language: ${2:Language}",
+      "---",
+      "\n",
+      "# Part 1",
+      "\n"
+    ]
+  }
+}
