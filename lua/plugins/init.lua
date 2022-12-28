@@ -8,6 +8,13 @@ return {
 		end,
 	},
 	{
+		"lewis6991/gitsigns.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("gitsigns").setup()
+		end,
+	},
+	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		config = function()
