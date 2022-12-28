@@ -24,9 +24,9 @@ map("n", "<leader>fm", function()
 	vim.lsp.buf.format({ async = true })
 end, opts)
 
-map("n", "<leader>ra", function()
-	vim.lsp.buf.rename()
-end, opts)
+-- map("n", "<leader>ra", function()
+-- 	vim.lsp.buf.rename()
+-- end, opts)
 
 map("n", "<leader>ca", function()
 	vim.lsp.buf.code_action()
