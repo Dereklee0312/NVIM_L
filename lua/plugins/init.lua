@@ -31,10 +31,6 @@ return {
 	},
 
 	--=========== BUFFER GOODIES ===========-
-	{
-		"dstein64/vim-startuptime",
-		cmd = { "StartupTime" },
-	},
 	-- {
 	-- 	"NvChad/ui",
 	-- 	lazy = false,
@@ -89,4 +85,13 @@ return {
 			require("plugins.lsp.null")
 		end,
 	},
+
+	-- Copilot
+	{
+		"github/copilot.vim",
+		cmd = { "Copilot" },
+		config = function ()
+			require("plugins.lsp.copilot")
+		end
+	}
 }
