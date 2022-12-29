@@ -59,8 +59,16 @@ function M.config()
 				end,
 			},
 			{
-				text = "",
+				-- text = "",
+				-- delete_buffer_on_left_click = true,
+				text = function(buffer)
+					return buffer.is_modified and "●" or ""
+				end,
+				fg = function(buffer)
+					return buffer.is_modified and "#F28FAD" or "#B5E8E0"
+				end,
 				delete_buffer_on_left_click = true,
+				truncation = { priority = 1 },
 			},
 			{
 				text = "",
