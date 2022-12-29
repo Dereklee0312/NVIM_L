@@ -7,6 +7,9 @@ opt.cmdheight = 0
 
 -- File stuff
 opt.undofile = false
+opt.updatetime = 50
+opt.timeoutlen = 350
+opt.swapfile = false
 
 -- Searching stuff
 opt.iskeyword:append "-" -- consider string-string as whole word
@@ -34,3 +37,4 @@ opt.clipboard = ""
 opt.termguicolors = true
 opt.signcolumn = 'yes'
 opt.laststatus = 3
+opt.timeoutlen = 350
