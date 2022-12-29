@@ -40,6 +40,7 @@ function M.config()
 			--=================--
 			BufferInactive = { bg = "none" },
 			TabLineFill = { bg = "none" },
+			rainbowcol1 = { fg = "#7fefbd" },
 
 			--=================--
 			--====== CMP ======--
