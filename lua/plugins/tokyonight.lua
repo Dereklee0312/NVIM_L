@@ -1,6 +1,6 @@
 local M = {
 	"folke/tokyonight.nvim",
-	lazy = false,
+	lazy = true,
 }
 
 function M.config()
@@ -85,7 +85,7 @@ function M.config()
 			}
 
 			--=================--
-			--==== NVIMTREE ===--
+			--==== NVIMTREE ===-s
 			--=================--
 			hl.NvimTreeWinSeparator = { fg = c.white }
 			hl.NvimTreeWindowPicker = {fg = "#a4bef3", bg = NONE}
@@ -100,9 +100,8 @@ function M.config()
 			--=================--
 			--====== CMP ======--
 			--=================--
-			hl.Pmenu = { bg = NONE }
-			-- hl.CmpBorder = { fg = "#5D3FD3" }
-			-- hl.CmpDocBorder = { fg = "#7F00FF" }
+			hl.Pmenu = { fg = "#7ee8fa", bg = "none" }
+			hl.PmenuSbar = { fg = "#8075ff", bg = "none" }
 
 		end,
 	})

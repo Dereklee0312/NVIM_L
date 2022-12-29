@@ -19,6 +19,7 @@ end
 local border_config = {
 	border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 	scrollbar = "┃",
+	winhighlight = 'Normal:Pmenu,FloatBorder:PmenuSbar,CursorLine:PmenuSel,Search:None',
 }
 
 --   פּ ﯟ   some other gogin for getting the float window for hovers etcod icons
