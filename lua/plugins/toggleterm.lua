@@ -50,9 +50,6 @@ function M.init()
 	nmap("", "<A-i>", "<cmd>ToggleTerm size=100 direction=float<CR>", { noremap = true, silent = true })
 	nmap("", "<A-v>", "<cmd>ToggleTerm size=110 direction=vertical<CR>", { noremap = true, silent = true })
 	nmap("", "<A-p>", "<cmd>lua _python_toggle()<CR>", { noremap = true, silent = true })
-	nmap("v", "<leader>ts", "<cmd> '<,'>ToggleTermSendVisualSelection <CR>", { noremap = true, silent = true })
-
-	-- if you only want these mappings for toggle term use term://*toggleterm#* instead
 	vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 end
 
