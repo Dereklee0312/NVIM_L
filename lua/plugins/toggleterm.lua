@@ -21,10 +21,17 @@ end
 
 function M.init()
 	local Terminal = require("toggleterm.terminal").Terminal
-	local lazygit = Terminal:new({ cmd = "lazygit" })
+	local _lazygit = Terminal:new({ cmd = "lazygit" })
+	local _python = Terminal:new({ cmd = "ipython" })
 
+	---@diagnostic disable-next-line: lowercase-global
 	function _lazy_toggle()
-		lazygit:toggle()
+		_lazygit:toggle()
+	end
+
+	---@diagnostic disable-next-line: lowercase-global
+	function _python_toggle()
+		_python:toggle()
 	end
 
 	function _G.set_terminal_keymaps()
@@ -42,6 +49,8 @@ function M.init()
 	nmap("", "<A-h>", "<cmd>ToggleTerm size=20 direction=horizontal<CR>", { noremap = true, silent = true })
 	nmap("", "<A-i>", "<cmd>ToggleTerm size=100 direction=float<CR>", { noremap = true, silent = true })
 	nmap("", "<A-v>", "<cmd>ToggleTerm size=110 direction=vertical<CR>", { noremap = true, silent = true })
+	nmap("", "<A-p>", "<cmd>lua _python_toggle()<CR>", { noremap = true, silent = true })
+	nmap("v", "<leader>ts", "<cmd> '<,'>ToggleTermSendVisualSelection <CR>", { noremap = true, silent = true })
 
 	-- if you only want these mappings for toggle term use term://*toggleterm#* instead
 	vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
