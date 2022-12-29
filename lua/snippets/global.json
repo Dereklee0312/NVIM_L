@@ -17,8 +17,8 @@
       "Author: Derek Lee",
       "Start Date: ${CURRENT_DATE}-${CURRENT_MONTH}-${CURRENT_YEAR}",
       "End Date: ",
-      "Link: ${0:Link}",
-	  "Difficulty: ${1:Diff}",
+      "Link: ${1:Link}",
+	  "Difficulty: ${2:Diff}",
       "\n"
     ]
   },

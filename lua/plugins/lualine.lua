@@ -149,7 +149,8 @@ function M.config()
 			},
 			lualine_x = {
 				{ "diagnostics", sources = { "nvim_diagnostic" } },
-				{ lsp_clients, color = { fg = "#e6e8e6" } },
+				-- { lsp_clients, color = { fg = "#e6e8e6" } },
+				{ lsp_clients, color = { fg = "#81879B" } },
 			},
 			lualine_y = { { "location", separator = { left = "" } } },
 			lualine_z = { { "progress", separator = { right = "" } } },
