@@ -8,21 +8,6 @@ map("", "<Space>", "<Nop>", {})
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.g.COPILOT = 0
-
--- Function to toggle github copilot plugin
-local function _toggle_copilot()
-	if vim.g.COPILOT == 0 then
-		vim.notify("ENABLED COPILOT")
-		vim.cmd("Copilot enable")
-		vim.g.COPILOT = 1
-	else
-		vim.notify("DISABLED COPILOT")
-		vim.cmd("Copilot disable")
-		vim.g.COPILOT = 0
-	end
-end
-
 -----------------
 -- Normal Mode --
 -----------------
@@ -78,12 +63,6 @@ map("n", "<leader>X", "<cmd>!chmod +x %<CR>", { silent = true })
 -----------------
 map("n", "<C-n>", "<CMD> NvimTreeToggle <CR>", opts)
 
-------------------
------- GIT -------
-------------------
-map("n", "<leader>gd", "<CMD> Gitsigns toggle_deleted <CR>", opts)
-map("n", "<leader>gb", "<CMD> Gitsigns blame_line <CR>", opts)
-map("n", "<leader>gc", _toggle_copilot, opts)
 
 ------------------
 --- TELESCOPE ---
