@@ -69,6 +69,18 @@ for _, server in pairs(servers) do
 	lspconfig[server].setup(opts)
 end
 
+lspconfig.tsserver.setup {
+  init_options = {
+    hostInfo = "neovim",
+  },
+  on_attach = on_attach,
+  capabilities = capabilities,
+  root_dir = function(fname)
+    return lspconfig.util.root_pattern "*.js"(fname)
+      or lspconfig.util.root_pattern("package.json", "jsconfig.json", ".git")(fname)
+  end,
+}
+
 --==========================================================================================--
 --======================================= DIAGNOSTICS ======================================--
 --==========================================================================================--
