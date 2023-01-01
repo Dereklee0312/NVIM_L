@@ -102,11 +102,12 @@ function M.config()
 		},
 		sections = {
 			lualine_a = { { mode, separator = { left = "", right = "" } } },
-			lualine_b = { "branch" },
-			lualine_c = {
+			lualine_b = {
 				{ "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
 				{ "filename", path = 1, symbols = { modified = "", readonly = "", unnamed = "" } },
-				{ git_branch, color = { fg = "#9792e3" }, separator = "", padding = { left = 0, right = 0 } },
+			},
+			lualine_c = {
+				{ git_branch, color = { fg = "#9792e3" }, padding = { left = 0, right = 1 } },
 				{
 					git_add,
 					color = { fg = "#61e786" },
@@ -149,8 +150,7 @@ function M.config()
 			},
 			lualine_x = {
 				{ "diagnostics", sources = { "nvim_diagnostic" } },
-				-- { lsp_clients, color = { fg = "#e6e8e6" } },
-				{ lsp_clients, color = { fg = "#81879B" } },
+				{ lsp_clients },
 			},
 			lualine_y = { { "location", separator = { left = "" } } },
 			lualine_z = { { "progress", separator = { right = "" } } },
