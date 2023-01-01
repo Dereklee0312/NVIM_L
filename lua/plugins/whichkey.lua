@@ -34,6 +34,10 @@ function M.config()
 			b = { "<CMD> Gitsigns blame_line <CR>", "Toggle Git Blame" },
 			c = { _toggle_copilot, "Toggle Copilot" },
 		},
+		["<leader>m"] = {
+			name = "+ Markdown ",
+			p = { "<CMD> MarkdownPreview <CR>", "Markdown Preview" },
+		},
 	})
 end
 

@@ -58,11 +58,13 @@ map("n", "<leader>x", "<CMD>bdelete<CR>", opts)
 -- Making file executable
 map("n", "<leader>X", "<cmd>!chmod +x %<CR>", { silent = true })
 
+-- Incrementing and decrementing numbers
+map("n", "+", "<C-a>", opts)
+map("n", "-", "<C-x>", opts)
 -----------------
 --  NVIM_TREE --
 -----------------
 map("n", "<C-n>", "<CMD> NvimTreeToggle <CR>", opts)
-
 
 ------------------
 --- TELESCOPE ---

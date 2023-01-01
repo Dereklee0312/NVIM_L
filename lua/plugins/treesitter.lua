@@ -26,6 +26,9 @@ function M.config()
 			enable = true,
 			use_languagetree = true,
 		},
+		indent = {
+			disable = { "python", "javascript" },
+		},
 		rainbow = {
 			enable = true,
 			extended_mode = true,

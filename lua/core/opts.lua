@@ -38,3 +38,5 @@ opt.termguicolors = true
 opt.signcolumn = 'yes'
 opt.laststatus = 3
 opt.timeoutlen = 350
+opt.splitbelow = true
+opt.splitright = true
