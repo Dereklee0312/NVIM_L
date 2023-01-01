@@ -19,7 +19,7 @@ end
 local border_config = {
 	border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 	scrollbar = "┃",
-	winhighlight = 'Normal:Pmenu,FloatBorder:PmenuSbar,CursorLine:PmenuSel,Search:None',
+	winhighlight = "Normal:Pmenu,FloatBorder:PmenuSbar,CursorLine:PmenuSel,Search:None",
 }
 
 --   פּ ﯟ   some other gogin for getting the float window for hovers etcod icons
@@ -52,6 +52,8 @@ local kind_icons = {
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
+local types = require("cmp.types")
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -77,7 +79,7 @@ cmp.setup({
 
 		-- Accept currently selected item. If none selected, `select` first item.
 		-- Set `select` to `false` to only confirm explicitly selected items.
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
+		["<CR>"] = cmp.mapping.confirm({ select = false }),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
@@ -141,7 +143,8 @@ cmp.setup({
 	experimental = {
 		ghost_text = true,
 	},
+	preselect = types.cmp.PreselectMode.None,
 	completion = {
-		completeopt = "menu,menuone,noinsert",
+		completeopt = "menu,menuone,noinsert,noselect",
 	},
 })
