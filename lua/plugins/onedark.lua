@@ -35,6 +35,15 @@ function M.config()
 		-- Custom Highlights --
 		colors = {}, -- Override default colors
 		highlights = {
+
+			--=================--
+			--=== TREESITTER ==--
+			--=================--
+			-- ["@variable"] = { fg = "#ff8aa2" },
+			["@variable"] = { fg = "#f7768e" },
+			["@function.builtin"] = { fg = "#7dcfff" },
+			["@parameter"] = { fg = "#c0caf5" },
+
 			--=================--
 			--===== BUFFER ====--
 			--=================--
