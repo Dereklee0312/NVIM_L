@@ -21,6 +21,22 @@ return {
 			require("nvim-autopairs").setup({})
 		end,
 	},
+	{
+		"abecodes/tabout.nvim",
+		event = "InsertEnter",
+		config = function ()
+			require("tabout").setup()
+		end
+	},
+	--=========== MARKDOWN ===========--
+	{
+		"iamcco/markdown-preview.nvim",
+		build = "cd app && npm install",
+		init = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	},
 	--=========== SCHEMES ===========--
 	{
 		"nvim-tree/nvim-web-devicons",
