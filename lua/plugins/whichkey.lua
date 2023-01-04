@@ -38,6 +38,8 @@ function M.config()
 			name = "+ Markdown ",
 			p = { "<CMD> MarkdownPreview <CR>", "Markdown Preview" },
 		},
+		["<leader>o"] = { ':<C-u>call append(line("."), repeat([""], v:count1))<CR>', "Insert New Line below" },
+		["<leader>O"] = { ':<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>', "Insert New Line above" },
 	})
 end
 

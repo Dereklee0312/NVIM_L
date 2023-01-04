@@ -11,6 +11,12 @@ vim.g.maplocalleader = " "
 -----------------
 -- Normal Mode --
 -----------------
+-- Navigating to beginning/end of line
+map("n", "<C-e>", "$", opts)
+map("n", "<C-b>", "^", opts)
+
+map("i","<C-e>", "<End>", opts)
+map("i","<C-b>", "<ESC>^i", opts)
 
 -- Move selected line / block of text in visual mode
 map("x", "<A-j>", ":move '>+1<CR>gv-gv=gv", opts)
