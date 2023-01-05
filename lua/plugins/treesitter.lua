@@ -9,6 +9,7 @@ function M.config()
 		ensure_installed = {
 			"vim",
 			"html",
+			"help",
 			"css",
 			"javascript",
 			"json",
