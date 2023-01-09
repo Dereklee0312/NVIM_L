@@ -77,7 +77,7 @@ local function lsp_clients()
 		end
 	end
 	local name = table.concat(clients, ",")
-	return (vim.o.columns > 90) and name .. " " or "  LSP "
+	return (vim.o.columns > 90) and name .. "  " or "  LSP "
 end
 
 local M = {
