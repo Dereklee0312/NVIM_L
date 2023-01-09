@@ -30,9 +30,10 @@ local sources = {
 
 	-- Csharp
 	b.formatting.csharpier,
+	b.formatting.clang_format,
 }
 
-null_ls.setup {
+null_ls.setup({
 	debug = true,
 	sources = sources,
 	-- on_attach = function(client, bufnr)
@@ -48,4 +49,4 @@ null_ls.setup {
 	--     })
 	--   end
 	-- end,
-}
+})

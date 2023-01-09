@@ -20,6 +20,7 @@ function M.config()
 			"python",
 			"java",
 			"c_sharp",
+			"cpp",
 		},
 		sync_install = true,
 		auto_install = false,
@@ -28,6 +29,7 @@ function M.config()
 			use_languagetree = true,
 		},
 		indent = {
+			enable = true,
 			disable = { "python", "javascript" },
 		},
 		rainbow = {
