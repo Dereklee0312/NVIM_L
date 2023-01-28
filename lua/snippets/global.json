@@ -7,7 +7,7 @@
       "Module: ${0:Module}",
       "Start Date: ${CURRENT_DATE}-${CURRENT_MONTH}-${CURRENT_YEAR}",
       "End Date: ",
-      "\n"
+      ""
     ],
     "description": "File header"
   },
@@ -19,7 +19,7 @@
       "End Date: ",
       "Link: ${1:Link}",
       "Difficulty: ${2:Diff}",
-      "\n"
+      ""
     ]
   },
   "AOCHeader": {
@@ -30,9 +30,9 @@
       "Date: ${CURRENT_DATE}-${CURRENT_MONTH}-${CURRENT_YEAR}",
       "Language: ${2:Language}",
       "---",
-      "\n",
+      "",
       "# Part 1",
-      "\n"
+      ""
     ]
   },
   "LeetSols": {
@@ -42,7 +42,7 @@
       "Solution ${1:Number}:",
       "Runtime: ${2:Speed} ms",
       "Mem Usage: ${3:Mem} MB",
-      "\n",
+      "",
       "${4:Body}",
       "'''"
     ]
