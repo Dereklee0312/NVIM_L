@@ -23,6 +23,7 @@ function M.init()
 	local Terminal = require("toggleterm.terminal").Terminal
 	local _lazygit = Terminal:new({ cmd = "lazygit" })
 	local _python = Terminal:new({ cmd = "ipython" })
+	local _vsCode = Terminal:new({ cmd = "code .", close_on_exit = true })
 
 	---@diagnostic disable-next-line: lowercase-global
 	function _lazy_toggle()
@@ -32,6 +33,10 @@ function M.init()
 	---@diagnostic disable-next-line: lowercase-global
 	function _python_toggle()
 		_python:toggle()
+	end
+
+	function _vsCode_toggle()
+		_vsCode:toggle()
 	end
 
 	function _G.set_terminal_keymaps()
@@ -50,6 +55,7 @@ function M.init()
 	nmap("", "<A-i>", "<cmd>ToggleTerm size=100 direction=float<CR>", { noremap = true, silent = true })
 	nmap("", "<A-v>", "<cmd>ToggleTerm size=110 direction=vertical<CR>", { noremap = true, silent = true })
 	nmap("", "<A-p>", "<cmd>lua _python_toggle()<CR>", { noremap = true, silent = true })
+	nmap("", "<A-c>", "<cmd>lua _vsCode_toggle()<CR>", { noremap = true, silent = true })
 	vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 end
 
