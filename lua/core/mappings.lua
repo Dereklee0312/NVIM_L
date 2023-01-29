@@ -42,7 +42,7 @@ map("n", "sv", ":vsplit<CR>", opts)
 
 -- Closing windows
 map("n", "W", ":q<CR>", opts)
-map("n", "<C-s>", ":w<CR>")
+map("n", "<C-s>", ":w<CR>", opts)
 
 -- Remove search highlighting with escape
 map("n", "<esc>", "<CMD> noh <CR>", opts)
@@ -55,7 +55,6 @@ map("n", "YY", "^y$", opts)
 map("n", "x", '"_x', opts)
 map("n", "D", '"_d', opts)
 map("n", "DD", '"_dd', opts)
-
 map("x", "<leader>p", [["_dP]], opts)
 
 -- buffers
@@ -67,6 +66,7 @@ map("n", "<leader>X", "<cmd>!chmod +x %<CR>", { silent = true })
 -- Incrementing and decrementing numbers
 map("n", "+", "<C-a>", opts)
 map("n", "-", "<C-x>", opts)
+
 -----------------
 --  NVIM_TREE --
 -----------------
