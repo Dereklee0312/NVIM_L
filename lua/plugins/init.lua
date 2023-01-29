@@ -111,6 +111,12 @@ return {
 		end,
 	},
 
+	-- Python Documentation
+	{
+		"twanh/nvim-pydoc",
+		ft = { "python" },
+	},
+
 	--============== WEB ==============--
 	{
 		"NvChad/nvim-colorizer.lua",
