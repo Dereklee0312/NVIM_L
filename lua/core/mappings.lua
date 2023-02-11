@@ -71,13 +71,3 @@ map("n", "-", "<C-x>", opts)
 --  NVIM_TREE --
 -----------------
 map("n", "<C-n>", "<CMD> NvimTreeToggle <CR>", opts)
-
-------------------
---- TELESCOPE ---
-------------------
-map("n", "<A-b>", "<CMD> Telescope buffers <CR>", opts)
-map("n", "gr", "<cmd> Telescope lsp_references <CR>", opts, term_opts)
-map("n", "gi", "<cmd> Telescope lsp_implementations <CR>", opts, term_opts)
-map("n", "gd", "<cmd> Telescope lsp_definitions <CR>", opts, term_opts)
-map("n", "<leader>D", "<cmd> Telescope lsp_type_definitions <CR>", opts, term_opts)
-map("n", "<leader>tk", "<cmd> Telescope keymaps <CR>", opts, term_opts)

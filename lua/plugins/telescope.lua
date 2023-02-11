@@ -121,6 +121,13 @@ function M.init()
 	map("n", "<A-R>", ":Telescope find_files<CR>", opts)
 	map("n", "<A-r>", ":Telescope file_browser<CR>", opts)
 	map("n", "<A-f>", ":Telescope live_grep<CR>", opts)
+	map("n", "<A-d>", ":TodoTelescope<CR>", opts)
+	map("n", "<A-b>", "<CMD> Telescope buffers <CR>", opts)
+	map("n", "gr", "<cmd> Telescope lsp_references <CR>", opts)
+	map("n", "gi", "<cmd> Telescope lsp_implementations <CR>", opts)
+	map("n", "gd", "<cmd> Telescope lsp_definitions <CR>", opts)
+	map("n", "<leader>D", "<cmd> Telescope lsp_type_definitions <CR>", opts)
+	map("n", "<leader>tk", "<cmd> Telescope keymaps <CR>", opts)
 end
 
 return M
