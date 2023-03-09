@@ -26,7 +26,7 @@ capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 local servers = {
 	-- LUA
-	"sumneko_lua",
+	"lua_ls",
 
 	-- C
 	"clangd",
