@@ -46,5 +46,18 @@
       "${4:Body}",
       "'''"
     ]
+  },
+  "Readme": {
+    "prefix": "Readme",
+    "body": [
+      "---",
+      "Name: Lee Tet Lioung Derek Lee Nen That",
+      "Student ID: 20820343",
+      "Date: ${CURRENT_DATE}-${CURRENT_MONTH}-${CURRENT_YEAR}",
+      "Language: ${1:Language}",
+      "Subject: ${2:Subject}",
+      "---",
+      ""
+    ]
   }
 }
